@@ -1,1 +1,34 @@
 
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QR Scanner</title>
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 16px; background: #f4f6f8; color: #1f2933; }
+    h1 { font-size: 20px; margin: 0 0 12px; display: flex; justify-content: space-between; align-items: center; }
+    h2 { font-size: 15px; margin: 20px 0 8px; color: #52606d; }
+    #gear { background: none; border: 0; font-size: 22px; padding: 4px; width: auto; flex: none; color: #52606d; }
+    #reader { width: 100%; border-radius: 12px; overflow: hidden; background: #000; min-height: 60px; }
+    .status { margin: 12px 0; padding: 12px; border-radius: 10px; font-size: 15px; font-weight: 600; text-align: center; }
+    .idle { background: #e4e7eb; } .busy { background: #fff3c4; }
+    .ok { background: #c6f7e2; color: #014d40; } .warn { background: #ffe8d9; color: #8a2c0d; }
+    .err { background: #ffd0d0; color: #7a0c0c; }
+    .btns { display: flex; gap: 8px; }
+    .btns button, .filebtn, #saveCfg {
+      flex: 1; padding: 14px; font-size: 16px; font-weight: 600; border: 0; border-radius: 10px;
+      background: #2563eb; color: #fff; text-align: center; display: block; width: 100%;
+    }
+    button:disabled { background: #9aa5b1 !important; }
+    #stopBtn { background: #52606d; }
+    .filebtn { margin-top: 8px; background: #fff; color: #2563eb; border: 2px solid #2563eb; }
+    #cfg { background: #fff; border-radius: 12px; padding: 14px; margin-bottom: 12px; display: none; }
+    #cfg label { font-size: 13px; color: #52606d; display: block; margin: 8px 0 4px; }
+    #cfg input { width: 100%; padding: 10px; font-size: 14px; border: 1px solid #cbd2d9; border-radius: 8px; }
+    #saveCfg { margin-top: 12px; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li { background: #fff; border-radius: 8px; padding: 10px; margin-bottom: 6px; font-size: 13px; word-break: break-all; }
+    li .t { color: #7b8794; font-size: 12px; display: block; margin-bottom: 2px; }
